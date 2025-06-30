@@ -1,40 +1,24 @@
 {
   "clientes": [
     {
-      "id": "5e23",
+      "id": "0644",
       "nombre": "Jesus",
       "apellido": "Lechuga",
       "email": "jesus@outlook.com",
       "telefono": "656-401-2656",
       "empresa": "Hostingdigimark",
-      "puesto": "Full Stack"
+      "puesto": "Full Stack",
+      "estado": 1
     },
     {
-      "id": "e2fb",
+      "id": "6f9c",
       "nombre": "Jamie",
       "apellido": "Ramos",
       "email": "Jamie@outlook.com",
       "telefono": "656-401-2656",
       "empresa": "Hostingdigimark",
-      "puesto": "RH"
-    },
-    {
-      "id": "695c",
-      "nombre": "Aravis",
-      "apellido": "Lechuga",
-      "email": "Aravis@outlook.com",
-      "telefono": "656-401-2656",
-      "empresa": "Hostingdigimark",
-      "puesto": "Backend"
-    },
-    {
-      "id": "2b5d",
-      "nombre": "Jesus (Nuevo)",
-      "apellido": "Lechuga",
-      "email": "jesus@outlook.com",
-      "telefono": "656-401-2656",
-      "empresa": "Hostingdigimark",
-      "puesto": "Full Stack"
+      "puesto": "RH",
+      "estado": 0
     }
   ]
 }
