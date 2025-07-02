@@ -1,24 +1,14 @@
 {
   "clientes": [
     {
-      "id": "0644",
-      "nombre": "Jesus",
+      "nombre": "Jesus Actualizado",
       "apellido": "Lechuga",
       "email": "jesus@outlook.com",
-      "telefono": "656-401-2656",
+      "telefono": "656-401-2657",
       "empresa": "Hostingdigimark",
-      "puesto": "Full Stack",
-      "estado": 1
-    },
-    {
-      "id": "6f9c",
-      "nombre": "Jamie",
-      "apellido": "Ramos",
-      "email": "Jamie@outlook.com",
-      "telefono": "656-401-2656",
-      "empresa": "Hostingdigimark",
-      "puesto": "RH",
-      "estado": 0
+      "puesto": "Ingeniero de Datos",
+      "estado": true,
+      "id": "0644"
     }
   ]
 }
