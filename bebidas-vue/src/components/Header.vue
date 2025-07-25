@@ -54,6 +54,13 @@
                     >
                         Favoritos
                     </RouterLink>
+
+                    <RouterLink
+                        :to="{name: 'ia'}"
+                        :class="['uppercase','font-bold', $route.name === 'ia' ? 'text-orange-500' : 'text-white']"
+                    >
+                        Generar con IA
+                    </RouterLink>
                 </nav>
             </div>
 
