@@ -4,8 +4,11 @@
     import { useFirestore } from 'vuefire';
     import { useRouter } from 'vue-router';
     import { validationSchema, imageSchema } from '@/validation/propiedadSchema';
+    import useImage from '@/composables/useImage';
 
     const items = [1,2,3,4,5]
+
+    const { uploadImage, image } = useImage()
 
     const router = useRouter()
     const db = useFirestore()
@@ -71,7 +74,10 @@
                 class="mb-5"
                 v-model="imagen.value.value"
                 :error-messages="imagen.errorMessage.value"
+                @change="uploadImage"
             />
+
+            
 
             <v-text-field
                 class="mb-5"
