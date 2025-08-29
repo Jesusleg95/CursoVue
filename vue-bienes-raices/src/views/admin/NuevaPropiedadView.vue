@@ -5,10 +5,14 @@
     import { useRouter } from 'vue-router';
     import { validationSchema, imageSchema } from '@/validation/propiedadSchema';
     import useImage from '@/composables/useImage';
+    import useLocationMap from '@/composables/useLocationMap';
+    import 'leaflet/dist/leaflet.css';
+    import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet';
 
     const items = [1,2,3,4,5]
 
-    const { uploadImage, image } = useImage()
+    const { uploadImage, image, url } = useImage()
+    const { zoom, center } = useLocationMap()
 
     const router = useRouter()
     const db = useFirestore()
@@ -36,7 +40,8 @@
 
         const { imagen, ...propiedad } = values
         const docRef = await addDoc(collection(db, "propiedades"), {
-            ...propiedad
+            ...propiedad,
+            imagen: url.value
         });
 
         if(docRef.id){
@@ -77,7 +82,10 @@
                 @change="uploadImage"
             />
 
-            
+            <div v-if="image" class="my-5">
+                <p class="font-weight-bold">Imagen Propiedad:</p>
+                <img class="w-50" :src="image">
+            </div>            
 
             <v-text-field
                 class="mb-5"
@@ -137,6 +145,22 @@
                 v-model="alberca.value.value"
                 :error-messages="alberca.errorMessage.value"
             />
+
+            <h2 class="font-weight-bold text-center my-5">Ubicación</h2>
+            <div class="pb-10">
+                <div style="height:600px;">
+                    <LMap 
+                        v-model:zoom="zoom" 
+                        :center="center" 
+                        :use-global-leaflet="false"
+                    >
+                        <LTileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        >
+                        </LTileLayer>
+                    </LMap>
+                </div>
+            </div>
 
             <v-btn
                 color="pink-accent-3"
